@@ -1,0 +1,6 @@
+<div *ngIf="!edit">{{car.brand}} {{car.year}} {{car.color}}</div>
+<div *ngIf="edit">
+	<input type="text" [(ngModel)]="car.brand" [ngModelOptions]="{standalone: true}" />
+</div>
+<button *ngIf="!edit" (click)="edit = true">EDIT</button>
+<button *ngIf="edit" (click)="edit = false">CANCEL</button>

@@ -1,0 +1,5 @@
+<div>
+	<div *ngFor="let car of cars; let i=index">
+		<a routerLink="/car/{{i}}">{{car.brand}} {{car.year}} {{car.color}}</a>
+	</div>
+</div>
