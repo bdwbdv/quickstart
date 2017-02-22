@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 declare let Notification: any;
 
@@ -7,7 +7,7 @@ declare let Notification: any;
     templateUrl: 'app/app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     constructor(private router: Router) {}
 
@@ -20,7 +20,7 @@ export class AppComponent {
         if (Notification.permission === "granted") {
             this.createTaskNotification();
         } else if (Notification.permission !== "denied") {
-            Notification.requestPermission(permission => {
+            Notification.requestPermission((permission: string) => {
                 if (permission === "granted") {
                     this.createTaskNotification();
                 }

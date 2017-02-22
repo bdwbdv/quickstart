@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/toPromise';
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
 import {Car} from "../objects/car";
 import {ActivatedRoute} from "@angular/router";
@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
     templateUrl: "app/components/car.component.html"
 })
 
-export class CarComponent {
+export class CarComponent implements OnInit {
 
     constructor(private http: Http, private route: ActivatedRoute) {}
 
